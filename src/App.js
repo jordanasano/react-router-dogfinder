@@ -1,9 +1,10 @@
 import './App.css';
+import DogList from './DogList';
 
 function App() {
   return (
     <div className="App">
-      <h1>Good luck!</h1>
+      <DogList />
     </div>
   );
 }
