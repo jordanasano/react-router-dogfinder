@@ -1,5 +1,6 @@
 import './App.css';
 import DogList from './DogList';
+import DogDetails from './DogDetails';
 import axios from "axios";
 import {useState} from "react";
 import {v4 as uuid} from "uuid";
@@ -28,8 +29,9 @@ console.log(dogList)
       <BrowserRouter>
       <Nav dogList = {dogList} />
       <Routes>
-        <Route path="/dog" element={<DogList dogList={dogList}/>} />
-        <Route path="*" element={<Navigate to="/dog"/>} />
+        <Route path="/dogs" element={<DogList dogList={dogList}/>} />
+        <Route path="/dogs/:name" element={<DogDetails dogList={dogList} />} />
+        <Route path="*" element={<Navigate to="/dogs"/>} />
       </Routes>
       </BrowserRouter>
 

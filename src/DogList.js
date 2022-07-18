@@ -16,7 +16,7 @@ function DogList({dogList}) {
                 <li key={dog.id}>
                     <p>{dog.name}</p>
                     <p>{dog.age}</p>
-                    <img src={`${dog.src}.jpg`} alt={dog.name} />
+                    <img src={`/${dog.src}.jpg`} alt={dog.name} />
                     {dog.facts.map(fact => <p>{fact}</p>)}
                 </li>
             ))}
