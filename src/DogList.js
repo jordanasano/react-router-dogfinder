@@ -1,27 +1,28 @@
+import { Link } from "react-router-dom";
 
-/** Make ajax request to get list of dogs and displays them
+/**
  *
- *  Props: none
- *  State: dogList
- *
+ *  Props: dogList
  *  App -> DogList
+ * renders page that lists all dogs and dog details
  */
-function DogList({dogList}) {
+function DogList({ dogList }) {
 
-
-    //FIXME: Key doesn't work for some reason
     return (
         <ul>
             {dogList.map(dog => (
                 <li key={dog.id}>
-                    <p>{dog.name}</p>
-                    <p>{dog.age}</p>
-                    <img src={`/${dog.src}.jpg`} alt={dog.name} />
-                    {dog.facts.map(fact => <p>{fact}</p>)}
+                    <Link to={`/dogs/${dog.name}`}>
+                        <p>{dog.name}</p>
+                        <p>{dog.age}</p>
+                        <img src={`/${dog.src}.jpg`} alt={dog.name} />
+                        {dog.facts.map(fact => <p>{fact}</p>)}
+                    </Link>
                 </li>
+
             ))}
         </ul>
-    )
+    );
 }
 
 export default DogList;
